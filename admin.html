@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <h2 class="loading-text">Loading Realm...</h2>
+    </div>
+
+    <button class="logoutbtn" onclick="logout()">Logout</button>
+    <h1>Admin panel</h1>
+    <form id="productForm" class="form-container">
+        <input type="text" id="productName" placeholder="Product Name" required>
+        <input type="text" id="productPrice" placeholder="Price" required>
+        <input type="text" id="productImage" placeholder="Image URL" required>
+        <button type="submit" class="adminbtn">Add Product</button>
+    </form>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
