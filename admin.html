@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <div id="loader">
-        <div class="spinner"></div>
-        <h2 class="loading-text">Loading Realm...</h2>
-    </div>
-
-    <button class="logoutbtn" onclick="logout()">Logout</button>
-    <h1>Admin panel</h1>
-    <form id="productForm" class="form-container">
-        <input type="text" id="productName" placeholder="Product Name" required>
-        <input type="text" id="productPrice" placeholder="Price" required>
-        <input type="text" id="productImage" placeholder="Image URL" required>
-        <button type="submit" class="adminbtn">Add Product</button>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="logo">E-<span style="color: orange">C</span>OM</h1>
+      <nav>
+        <span id="userName"></span>
+        <button onclick="logout()">Logout</button>
+      </nav>
+    </header>
+    <h1>Admin Panel</h1>
+    <form id="productForm">
+      <input type="text" id="productName" placeholder="Product Name" required />
+      <input
+        type="text"
+        id="productPrice"
+        placeholder="Product Price"
+        required
+      />
+      <input type="text" id="productImage" placeholder="Image URL" required />
+      <select  id="categories">
+        <option value="headphones">Headphones</option>
+        <option value="camera">Camera</option>
+        <option value="laptop">Laptop</option>
+      </select>
+      <button type="submit">Add Product</button>
     </form>
 
-    <script src="js/admin.js"></script>
-</body>
+    <h2>Manage Products</h2>
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+            <!-- products will be listed here -->
+        </tbody>
+    </table>
+
+    <!-- Firebase Auth SDK -->
+    <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"></script>
+
+    <script type="module" src="js/admin.js"></script>
+  </body>
 </html>

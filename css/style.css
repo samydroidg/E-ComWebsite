@@ -162,3 +162,26 @@ footer{
         opacity: 0.6;
     }
 }
+
+/* search bar */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.controls input, .controls select{
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#searchInput{
+    padding: 10px;
+    width: 80%;
+    min-width: 400px;
+    font-size: 16px;
+}

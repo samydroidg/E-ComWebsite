@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Register</title>
+</head>
+<body>
+  <h1>Register</h1>
+  <form id="registerForm">
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Register</button>
+  </form>
+
+  <!-- Firebase Core -->
+  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCDAxLh_cQGdRwh9PSIM82E6-oV79R0nFw",
+      authDomain: "e-comwebsite0.firebaseapp.com",
+      projectId: "e-comwebsite0",
+      storageBucket: "e-comwebsite0.appspot.com",
+      messagingSenderId: "634640797436",
+      appId: "1:634640797436:web:10f880cdba166471095179",
+      measurementId: "G-61F1HRQ81V"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("registerForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCred = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCred.user;
+
+        // ✅ Store role in Firestore
+        await setDoc(doc(db, "users", user.uid), {
+          email: user.email,
+          role: "user"
+        });
+
+        alert("✅ Registration successful! You can now log in.");
+        window.location.href = "userLogin.html";
+      } catch (err) {
+        alert("❌ " + err.message);
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

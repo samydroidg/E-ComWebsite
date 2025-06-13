@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-Com website</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header class="navbar">
-        <h1 class="logo">E-<span style="color: orange;">C</span>OM</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Deals</a>
-            <a href="#">Cart</a>
-        </nav>
+      <h1 class="logo">E-<span style="color: orange">C</span>OM</h1>
+      <nav>
+        <span id="userName"></span>
+        <a href="#">Home</a>
+        <a href="#">Deals</a>
+        <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+        <button onclick="logout()">Logout</button>
+      </nav>
     </header>
 
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search for products..."/>
+
+      <select id="categoryFilter"></select>
+      <select id="sortPrice">
+        <option value="default">Sort by Price</option>
+        <option value="low-high">Low to High</option>
+        <option value="high-low">High to Low</option>
+      </select>
+    </div>
+    <p id="noResult" style="text-align: center; display: none; margin-top: 20px; color: red;" >No products found.</p>
+
     <main class="product-section">
-        <div class="product-card">
-            <img src="images/product1.jpg" alt="Headphones">
-            <h3>Boat Headphones</h3>
-            <p>₹4,599</p>
-            <button class="btn">Add to Cart</button>
-        </div>
-        <!-- add products here -->
+      <!-- add products here -->
     </main>
 
     <footer>
-        <p>&copy; 2025 E-Com website by Bittu</p>
+      <p>&copy; 2025 E-Com website by Bittu</p>
     </footer>
 
-    <script src="js/script.js"></script>
-</body>
+    
+    <script type="module" src="js/script.js"></script>
+  </body>
 </html>
