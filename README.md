@@ -79,6 +79,10 @@ export const firebaseConfig = {
 📄 userLogin.html
 📄 userSignup.html
 ```
+| Homepage | Cart | order |
+|---------|------|----------|
+| ![](preview/home.png) | ![](preview/cart.png) | ![](preview/order.png) |
+
 
 ### 🤖 Made With
 
