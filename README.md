@@ -2,7 +2,7 @@
 
 > 🚀 A sleek, fully functional e-commerce web app with **admin panel**, **user authentication**, **cart**, **checkout**, and **order history**—powered by Firebase.
 
-![ecom-preview](https://samydroidg.github.io/E-ComWebsite/)
+![ecom-preview](preview/home.png)
 
 <!-- Optional: Replace with an actual screenshot of your app later -->
 
