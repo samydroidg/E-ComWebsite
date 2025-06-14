@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>User Login</title>
-</head>
-<body>
-  <h2>Login</h2>
-  <form id="loginForm">
-    <input type="email" id="loginEmail" placeholder="Email" required />
-    <input type="password" id="loginPassword" placeholder="Password" required />
-    <button type="submit">Login</button>
-  </form>
-  <p>Don't have an account? <a href="userRegister.html">Register here</a></p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Login</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>L<span style="color: orange;">o</span>gin</h2>
+      <form id="loginForm" class="logRegForm">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Password"
+          required
+        />
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p>
+        Don't have an account? <a href="userRegister.html">Register here</a>
+      </p>
+    </div>
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"></script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
-    const firebaseConfig = {
+      const firebaseConfig = {
         apiKey: "AIzaSyCDAxLh_cQGdRwh9PSIM82E6-oV79R0nFw",
         authDomain: "e-comwebsite0.firebaseapp.com",
         projectId: "e-comwebsite0",
@@ -28,25 +41,25 @@
         messagingSenderId: "634640797436",
         appId: "1:634640797436:web:10f880cdba166471095179",
         measurementId: "G-61F1HRQ81V",
-    };
+      };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-    const form = document.getElementById("loginForm");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
 
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          alert("Logged in successfully!");
-          localStorage.setItem("userLoggedIn", "true");
-          window.location.href = "index.html";
-        })
-        .catch(err => alert("Login Failed: " + err.message));
-    });
-  </script>
-</body>
+        signInWithEmailAndPassword(auth, email, password)
+          .then(() => {
+            alert("Logged in successfully!");
+            localStorage.setItem("userLoggedIn", "true");
+            window.location.href = "index.html";
+          })
+          .catch((err) => alert("Login Failed: " + err.message));
+      });
+    </script>
+  </body>
 </html>

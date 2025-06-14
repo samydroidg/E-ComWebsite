@@ -2,14 +2,17 @@
 <html>
 <head>
   <title>User Register</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Register</h1>
-  <form id="registerForm">
+  <div class="form-container">
+  <h2>R<span style="color: orange;">e</span>gist<span style="color: orange;">e</span>r</h2>
+  <form id="registerForm" class="logRegForm">
     <input type="email" id="email" placeholder="Email" required />
     <input type="password" id="password" placeholder="Password" required />
-    <button type="submit">Register</button>
+    <button type="submit" class="btn">Register</button>
   </form>
+</div>
 
   <!-- Firebase Core -->
   <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"></script>

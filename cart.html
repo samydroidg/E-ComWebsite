@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cart</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <h1>Your Cart</h1>
-  <div id="cartItems"></div>
-  <h3>Total: ₹<span id="totalAmount">0</span></h3>
-  <button onclick="checkout()">Checkout</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .cart-container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-  <script src="js/cart.js"></script>
-</body>
+      .cart-container > h1{
+        margin: 30px 0;
+        font-size: 4rem;
+      }
+
+      #cartItems > div{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .cart-container > h3{
+        margin: 30px 0;
+        font-size: 1.7rem;
+      }
+
+      .cart-container .cartBtn{
+        border-radius: 8px;
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <h1 class="logo">E-<span style="color: orange">C</span>OM</h1>
+      <nav>
+        <span id="userName"></span>
+        <a href="index.html">Home</a>
+        <a href="order.html">Orders</a>
+        <button onclick="logout()" class="btn">Logout</button>
+      </nav>
+    </header>
+    <div class="cart-container">
+      <h1><span style="color: orange">Y</span>our <span style="color: orange">C</span>art</h1>
+      <div id="cartItems"></div>
+      <h3>Total: ₹<span id="totalAmount">0</span></h3>
+      <button onclick="checkout()" class="btn cartBtn" >Checkout</button>
+    </div>
+
+    <script type="module" src="js/cart.js"></script>
+  </body>
 </html>

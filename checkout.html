@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <div class="checkoutContainer">
+        <h1><span style="color: orange">C</span>heckout</h1>
+        <div id="checkoutItems"></div>
+
+        <h3>Total: ₹<span id="checkoutTotal">0</span></h3>
+
+        <input type="text" id="userAddress" placeholder="Enter your address here..." required>
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <script type="module" src="js/checkout.js"></script>
+</body>
+</html>

@@ -69,7 +69,6 @@ if (form) {
         imageUrl: image,
         category
       });
-      alert("✅ Product added!");
       form.reset();
     } catch (err) {
       console.error("Error adding document: ", err);
@@ -95,8 +94,8 @@ function loadAdminProducts() {
         <td><img src="${data.imageUrl}" alt="${data.name}" width="50" height="50" /></td>
         <td>${data.category}</td>
         <td>
-          <button onclick="editProduct('${docSnap.id}', '${data.name}', '${data.price}', '${data.imageUrl}', '${data.category}')">Edit</button>
-          <button onclick="deleteProduct('${docSnap.id}')">Delete</button>
+          <button onclick="editProduct('${docSnap.id}', '${data.name}', '${data.price}', '${data.imageUrl}', '${data.category}')" class="btn productBtn">Edit</button>
+          <button onclick="deleteProduct('${docSnap.id}')" class="btn productBtn">Delete</button>
         </td>
       `;
 
@@ -135,7 +134,6 @@ window.deleteProduct = async function (id) {
   if (confirm("Are you sure you want to delete this product?")) {
     try {
       await deleteDoc(doc(db, "products", id));
-      alert("❌ Product deleted!");
     } catch (e) {
       console.error("Delete failed:", e);
     }

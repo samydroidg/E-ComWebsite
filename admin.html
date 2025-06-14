@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css">
   </head>
   <body>
     <header class="navbar">
       <h1 class="logo">E-<span style="color: orange">C</span>OM</h1>
       <nav>
         <span id="userName"></span>
-        <button onclick="logout()">Logout</button>
+        <button onclick="logout()" class="btn productBtn">Logout</button>
       </nav>
     </header>
-    <h1>Admin Panel</h1>
+    <div class="productAdd">
+    <h1>Add Products Here</h1>
     <form id="productForm">
       <input type="text" id="productName" placeholder="Product Name" required />
       <input
@@ -29,9 +31,11 @@
         <option value="camera">Camera</option>
         <option value="laptop">Laptop</option>
       </select>
-      <button type="submit">Add Product</button>
+      <button type="submit" class="btn productBtn">Add Product</button>
     </form>
+  </div>
 
+  <div class="productmanager">
     <h2>Manage Products</h2>
     <table id="productTable">
         <thead>
@@ -47,6 +51,7 @@
             <!-- products will be listed here -->
         </tbody>
     </table>
+  </div>
 
     <!-- Firebase Auth SDK -->
     <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"></script>

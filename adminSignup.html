@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Signup</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    
+  </style>
 </head>
 <body>
   <div class="form-container">
     <h2>Admin Signup</h2>
-    <form id="signupForm">
+    <form id="adminSignupForm" class="logRegForm">
       <input type="email" id="email" placeholder="Admin Email" required />
       <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Sign Up</button>
+      <button type="submit" class="btn">Sign Up</button>
     </form>
     <p>Already have an account? <a href="adminLogin.html">Login here</a></p>
   </div>
@@ -41,7 +44,7 @@
     const auth = getAuth(app);
 
     // ✅ Admin Signup
-    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+    document.getElementById("adminSignupForm").addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const email = document.getElementById("email").value;

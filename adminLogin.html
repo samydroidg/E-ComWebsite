@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h2>Admin Login</h2>
-    <form action="" id="loginForm">
-      <input type="email" id="email" placeholder="Email Here..." required />
-      <input
-        type="password"
-        id="password"
-        placeholder="Password Here..."
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
-    <p id="errorMsg" style="color: red;"></p>
+    <div class="form-container">
+      <h2>A<span style="color: orange;">d</span>min L<span style="color: orange;">o</span>gin</h2>
+      <form action="" id="loginForm" class="logRegForm">
+        <input type="email" id="email" placeholder="Email Here..." required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password Here..."
+          required
+        />
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p id="errorMsg" style="color: red"></p>
+    </div>
 
     <script type="module" src="js/adminLogin.js"></script>
   </body>

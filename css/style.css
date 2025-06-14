@@ -67,11 +67,28 @@ footer{
     display: flex;
     align-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
+    /* justify-content: center; */
 }
+
+.form-container > h2{
+    margin-top: 80px;
+    margin-bottom: 190px;
+    top: 10%;
+    font-size: 4rem;
+}
+
+.logRegForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-width: 900px;
+    gap: 35px;
+    margin-bottom: 20px;
+  }
 
 .form-container input{
     width: 60%;
@@ -82,6 +99,17 @@ footer{
     border-bottom: 2px solid white;
     color: white;
     font-size: 15px;
+}
+
+.form-container button{
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-container > p > a{
+    text-decoration: none;
+    color: rgb(148, 148, 148);
 }
 
 .adminbtn{
