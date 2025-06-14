@@ -71,3 +71,5 @@ function changeQty(index, delta) {
 }
 
 window.checkout = checkout;
+window.changeQty = changeQty;
+window.removeItem = removeItem;
